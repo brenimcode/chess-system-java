@@ -4,6 +4,14 @@ public class Board {
 	private int rows;
 	private int columns;
 	private Piece[][] pieces;
+
+	public Piece piece(int row, int colum) {
+		return pieces[row][colum];
+	}
+	
+	public Piece piece(Position position) {
+		return pieces[position.getRow()][position.getColumn()];
+	}
 	
 	public Board(int rows, int columns) {
 		super();
