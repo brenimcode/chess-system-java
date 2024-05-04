@@ -12,6 +12,22 @@ public class Board {
 		return pieces[row][column];
 	}
 	
+	public Piece removePiece(Position position) {
+		if(!positionExists(position)) {
+			throw new BoardException("Position Does not exist!");
+		}
+		if(piece(position) == null) {
+			// nao tem peça aqui
+			return null;
+		}
+		Piece aux = piece(position);
+		aux.position = null;
+		pieces[position.getRow()][position.getColumn()] = null;
+		return aux;
+	}
+	
+		
+	
 	public Piece piece(Position position) {
 		if(!positionExists(position)) {
 			throw new BoardException("Position Does not exist!");
