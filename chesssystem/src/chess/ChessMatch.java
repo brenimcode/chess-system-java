@@ -35,6 +35,12 @@ public class ChessMatch {
 		return (ChessPiece) capturedPiece;
 	}
 	
+	public boolean[][] possibleMoves(ChessPosition sourcePosition){
+		Position position = sourcePosition.toPosition();
+		validateSourcePosition(position);
+		return board.piece(position).possibleMoves();
+	}
+	
 	private void validateSourcePosition(Position position) {
 		if(!board.thereIsAPiece(position)) {
 			throw new ChessException("There is no piece on source position!");
@@ -77,4 +83,5 @@ public class ChessMatch {
         placeNewPiece('d', 8, new King(board, Color.BLACK));
 	}
 		
+	
 }
