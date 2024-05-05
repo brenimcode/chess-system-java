@@ -36,8 +36,12 @@ public class Program {
 				System.out.println(e.getMessage());
 				sc.nextLine();
 			}
-			catch(InputMismatchException e) {
-				System.out.println(e.getMessage());
+			catch(InputMismatchException e2) {
+				System.out.println(e2.getMessage());
+				sc.nextLine();
+			}
+			catch(ArrayIndexOutOfBoundsException e3) {
+				System.out.println(e3.getMessage());
 				sc.nextLine();
 			}
 		}
